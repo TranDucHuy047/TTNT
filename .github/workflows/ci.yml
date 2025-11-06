@@ -1,0 +1,41 @@
+# Tên của pipeline
+name: Python CI
+
+# Điều kiện kích hoạt: Chạy khi có push hoặc pull request vào 2 nhánh chính
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+# Các công việc (jobs) sẽ chạy
+jobs:
+  build-and-test:
+    # Chạy trên máy ảo Ubuntu mới nhất của GitHub
+    runs-on: ubuntu-latest
+
+    # Các bước thực hiện
+    steps:
+      # Bước 1: Checkout code về máy ảo
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Bước 2: Cài đặt môi trường Python (ví dụ: phiên bản 3.10)
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      # Bước 3: Cài đặt các thư viện
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          # (Cần đảm bảo file requirements.txt tồn tại trong dự án)
+
+      # Bước 4: Chạy Unit Tests với Pytest
+      # Đây là phần chính của "chỉ chạy unit tests ban đầu"
+      - name: Run Unit Tests
+        run: |
+          pip install pytest  # Cài đặt pytest
+          pytest            # Chạy pytest (nó sẽ tự tìm các file test)
