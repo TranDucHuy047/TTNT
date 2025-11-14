@@ -1,0 +1,7 @@
+
+room_id,capacity,room_type
+R1,40,Lecture
+R2,60,Lecture
+R3,30,Lab
+R4,35,Lab
+R5,50,Lecture

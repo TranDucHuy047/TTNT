@@ -1,0 +1,16 @@
+{
+  "suite": "base",
+  "best_fitness": -3.0,
+  "hard_violations": {
+    "feasible": 0,
+    "room_type": 0,
+    "capacity": 0,
+    "teacher_overlap": 0,
+    "room_overlap": 0
+  },
+  "soft_violations": {
+    "late_slot": 3
+  },
+  "overflow": 0.0,
+  "generations": 50
+}

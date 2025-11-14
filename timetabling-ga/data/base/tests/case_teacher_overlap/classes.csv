@@ -1,0 +1,5 @@
+
+class_id,subject_id,teacher_id,size,room_type
+C1,SUB1,TCH1,35,Lecture
+C2,SUB2,TCH1,30,Lecture
+C3,SUB3,TCH2,25,Lab
